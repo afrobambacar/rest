@@ -1,11 +1,12 @@
 language: node_js
 node_js:
   - "10"
+before_install:
+  - docker run --name mysql -e "MYSQL_ROOT_PASSWORD=example" -e "MYSQL_DATABASE=api_dev" -p 3306:3306 -d mysql:8 --default-authentication-plugin=mysql_native_password
 install:
   - npm install
 before_script:
   - npm run lint
-  - docker-compose up db
 script:
   - npm test
 after_success:

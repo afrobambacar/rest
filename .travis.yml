@@ -9,5 +9,5 @@ before_script:
 script:
   - npm test
 after_success:
-  - npm run postcoverage
+  - npm run coverage
 cache: npm

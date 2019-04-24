@@ -11,7 +11,7 @@ const requireProcessEnv = (name) => {
 }
 
 /* istanbul ignore next */
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 'test') {
   const dotenv = require('dotenv-safe')
   dotenv.load({
     sample: path.join(__dirname, '../.env')
@@ -39,13 +39,13 @@ const config = {
   test: {
     syncModels: true,
     db: {
-      uri: 'mysql://root:example@localhost:9001/api_dev'
+      uri: requireProcessEnv('SQL_TEST_URI')
     }
   },
   development: {
     syncModels: true,
     db: {
-      uri: 'mysql://root:example@host.docker.internal:3306/api_dev'
+      uri: requireProcessEnv('SQL_URI')
     }
   },
   production: {}

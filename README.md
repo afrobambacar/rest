@@ -1,6 +1,7 @@
 # RESTful API Scaffold
 
 [![Build Status](https://travis-ci.org/afrobambacar/rest.svg?branch=master)](https://travis-ci.org/afrobambacar/rest)
+[![codecov](https://codecov.io/gh/afrobambacar/rest/branch/master/graph/badge.svg)](https://codecov.io/gh/afrobambacar/rest)
 
 express.js, sequelize.js를 이용한 간단한 API 앱
 

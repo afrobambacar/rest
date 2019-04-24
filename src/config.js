@@ -39,7 +39,7 @@ const config = {
   test: {
     syncModels: true,
     db: {
-      uri: 'mysql://root:example@localhost:3306/api_dev'
+      uri: 'mysql://root:example@localhost:9001/api_dev'
     }
   },
   development: {

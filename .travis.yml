@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "10"
 before_install:
+  - cp .env.example .env
   - docker run --name mysql -e "MYSQL_ROOT_PASSWORD=example" -e "MYSQL_DATABASE=api_dev" -p 9001:3306 -d mysql:8 --default-authentication-plugin=mysql_native_password
 install:
   - npm install

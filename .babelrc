@@ -1,9 +1,16 @@
 {
   "presets": [
-    "es2015",
-    "stage-1"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
   ],
   "plugins": [
-    "transform-runtime"
+    "@babel/plugin-transform-runtime", 
+    "@babel/plugin-transform-destructuring"
   ]
 }

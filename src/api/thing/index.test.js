@@ -3,14 +3,14 @@ import jsend from 'jsend'
 import express from '../../services/express'
 import { apiRoot } from '../../config'
 import routes from '.'
-import db from '../../services/db'
+import { Thing } from '../../services/sequelize'
 
 const app = () => express(apiRoot, routes)
 
 let thing
 
 beforeEach(async () => {
-  thing = await db.Thing.create({ title: 'hello', body: 'world', active: true })
+  thing = await Thing.create({ title: 'hello', body: 'world', active: true })
 })
 
 test('GET /things to be 200', async () => {

@@ -1,7 +1,5 @@
 import { success, notFound } from '../../services/response'
-import db from '../../services/db'
-
-const Model = db.Thing
+import { Thing as Model } from '../../services/sequelize'
 
 export const index = (req, res, next) =>
   Model.findAll()

@@ -26,6 +26,7 @@ const config = {
     ip: process.env.IP || '0.0.0.0',
     apiRoot: process.env.API_ROOT || '',
     syncModels: false,
+    syncForce: false,
     db: {
       options: {
         dialect: 'mysql',

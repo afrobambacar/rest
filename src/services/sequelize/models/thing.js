@@ -1,5 +1,9 @@
+import { Model } from 'sequelize'
+
 export default (sequelize, DataTypes) => {
-  return sequelize.define('Thing', {
+  class Thing extends Model {}
+
+  Thing.init({
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,6 +18,9 @@ export default (sequelize, DataTypes) => {
     paranoid: true,
     underscored: true,
     freezeTableName: true,
-    tableName: 'things'
+    tableName: 'thing',
+    sequelize
   })
+
+  return Thing
 }
